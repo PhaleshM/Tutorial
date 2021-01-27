@@ -1,0 +1,103 @@
+{% extends "first_app/base.html" %}
+{% load static %}
+{% block headcontent %}
+<style>
+    table {
+        border-collapse: collapse;
+        border: 2px whitesmoke solid;
+        margin: 1em auto;
+        color: yellow;
+        font-size: 2vw;
+    }
+
+    table td,
+    table th {
+        border: 2px whitesmoke solid;
+        padding: 0 4px;
+    }
+
+    table th {
+        cursor: default;
+    }
+    
+    table.videos td:nth-child(1) {
+        text-align: center;
+    }
+
+    table.videos td:nth-child(2) {
+        max-width: auto;
+    }
+
+    table.videos td:nth-child(3) {
+        max-width: auto;
+    }
+
+     table.videos td:nth-child(4) {
+        width: 100px;
+        position: relative;
+    }
+    table.videos td:nth-child(4) img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 110;
+    }
+    table.videos td:nth-child(4) div {
+        background-color: gold;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height:100%;
+        z-index: 100;
+    }
+    table tr:hover {
+        cursor:default;
+        background-color: rgba(0, 238, 255, 0.733);
+    }
+    .video_list h1{
+        font-size: 3.5vw;
+    }
+    .video_list h3{
+        font-size: 2.7vw;
+    }
+
+    .video_list {
+        text-align: center;
+    }
+    
+</style> 
+{% endblock headcontent %}
+{% block maincontent %}
+<div class='container video_list'>
+    <h1>Videos {{video.is_active}}</h1>
+    <h3>Click on edit icon to edit video or<a href="{% url 'video-create' %}"> Click here to add new video</a></h3>
+    <table class="videos">
+        <tr>
+            <th> Edit</th>
+            <th> Video</th>
+            <th> Author</th>
+            <th>Rating</th>
+        </tr>
+        {% for video in object_list %}
+        <tr >
+            <td>
+            <a href="{% url 'video-update' video.id %}" class="fa fa-edit"></a>
+            </td>
+            <td style="text-decoration:{% if video.is_active %} none{% else %} line-through{% endif %}" >
+                {{video.title}}
+            </td>
+            <td>
+                {{video.author}}
+            </td>
+            <td>
+                <div class="starcount" style=" width: calc(20% * {{video.star_count}})" > </div>
+                <img src="{% static 'first_app/image/stars.png' %}" alt="{{ video.star_count }}"
+                title="{{ video.star_count }}">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+</div>
+{% endblock maincontent %}

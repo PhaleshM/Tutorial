@@ -1,0 +1,68 @@
+/*google font raleway*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,800;1,200;1,500;1,700&display=swap');
+/*
+font-family: 'Raleway', sans-serif;
+*/
+/*google font roboto slab*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;600&display=swap');
+/*
+font-family: 'Roboto Slab', serif;
+*/
+/*google font jetbrains mono*/
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
+/*
+font-family: 'JetBrains Mono', monospace;
+*/
+body{
+    
+    text-decoration: white wavy ;
+    font-family: 'Roboto Slab', serif;
+    background: radial-gradient(#485563,#29323c) fixed;
+}
+footer{
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    padding: 0% 4%;
+    background-color: black;
+    bottom: 0;
+    font-size: 18px;
+}
+header img{
+    position: relative;
+    margin: 20px 20px 20px 20px;
+    border: gold solid 2px;  
+}
+nav{
+    height: 80px;
+    font-size: 20px;
+    z-index: 100;
+
+    position: relative;
+    background: rgb(0, 0, 0) ;
+    color: rgb(255, 255, 255);
+ 
+}
+header{
+    background-color: rgb(0, 0, 0);
+    z-index: 102;
+    position: sticky;
+    margin-left: 5px;
+}
+header h1,img{
+    color: rgb(53, 53, 53);
+    margin-top: 10px;
+    margin-left: 5px;
+    float: left;
+}
+header h1{
+    margin-top: 15px;
+}
+.div1 a{
+    float: right;
+    align-self: start;
+    margin: 4px;
+    margin-top: 20px ;
+    margin-right: 8px;
+    
+}

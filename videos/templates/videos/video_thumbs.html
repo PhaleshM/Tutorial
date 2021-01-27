@@ -1,0 +1,47 @@
+{% extends "first_app/base.html" %}
+{% block headcontent %}
+<style>
+    .videothumbs {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+    }
+
+    .videothumbs img {
+        border-radius: 2%;
+        position: initial;
+        height: 17%;
+        border-radius: 2%;
+        box-shadow: 13px -8px 4px rgb(109, 109, 109);
+        margin: 12px 12px 12px 12px;
+    }
+
+    .videothumbs a:hover {
+        transform: scale(1.05);
+        /*box-shadow: 6px 7px 8px 2px rgba(0, 0, 0, 0.4);*/
+    }
+    .video_thumbs{
+        text-align: center;
+    }
+</style>
+{% endblock headcontent %}
+
+
+{% block maincontent %}
+<div class="video_thumbs">
+    <h1>Videos</h1>
+    <h4>Click thumbnail to open video</h4>
+    <div class='videothumbs'>
+        {% for video in video_thumbs %}
+        <a href="{% url 'video-detail' video.id %}">
+        {% comment %} <a href="https://www.youtube.com/watch?v={{video.youtube_vid}}"> {% endcomment %}
+            <img src="http://i3.ytimg.com/vi/{{video.youtube_vid}}/mqdefault.jpg" alt="{{ video.title }}"
+                title="{{video.title}} : {{ video.author }}">
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock maincontent %}

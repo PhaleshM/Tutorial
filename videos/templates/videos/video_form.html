@@ -1,0 +1,62 @@
+{% extends "first_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block headcontent %}
+<style>
+    .asteriskField {
+        display: none;
+    }
+    form h1{
+        text-align: center;
+        font-style: italic;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;    }
+    .requiredField,.form-check-label {
+        font-style: italic;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+    .form-check-label{
+        margin-left: 7px;
+    }
+    .credate{
+        text-align: center;
+        font-size: 30px;
+    }
+    .container input[type='submit']{
+        text-align: center;
+        margin-left: 40%;
+    }
+    .container input[type='checkbox']{
+        margin-top: 16px;
+        transform:scale(1.8);
+    }
+    #update{
+        text-align: center;
+        margin-left: 45.05%;
+    }
+</style>
+{% endblock headcontent %}
+
+{% block maincontent %}
+<div class='container'>
+
+    <form method="POST">
+        <h1>
+            {% if form.instance.pk %}
+            Update Video
+            {% else %}
+            Add New Video
+            {% endif %}
+        </h1>
+        {{form|crispy}}
+        {% csrf_token %}
+        {% if form.instance.pk %}
+        <input type="submit" id="update" class="btn btn-light credate" value="Update"><br>
+        <a href="{% url 'video-delete' video.id %}">Delete Permanently</a><br><br>
+        {% else %}
+        <input type="submit" class="btn btn-light credate" value="Create">&nbsp;&nbsp;
+        <input type="reset" class="btn btn-light credate" value="Reset"><br><br>
+        {% endif %}
+    </form>
+</div>
+{% endblock maincontent %}

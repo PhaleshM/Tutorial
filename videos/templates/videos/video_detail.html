@@ -1,0 +1,42 @@
+{% extends "first_app/base.html" %}
+{% block headcontent %}
+<style>
+    iframe{
+        display: block;
+        width: 80%;
+        margin: 1em auto;
+        height: calc(.5625 * 70vw);
+        min-width: 320px;
+        /* min height is .5625 times min width */
+        min-height: 180px;
+        max-width: 1920px;
+        /* max height is .5625 times max width */
+        max-height: 1080px
+    }
+    .video_detail {
+        text-align: center;
+    }
+    .video_detail h1{
+        font-size: 4vw;
+    }
+@media screen and (max-width:800px) {
+    main{
+        margin: 68px 0 48px 0;
+    }
+    iframe{
+        display: block;
+        width: 98%;
+        height: calc(.5625 * 88vw);
+    }
+
+}
+</style>
+{% endblock headcontent %}
+{% block maincontent %}
+<div class='video_detail'>
+    <h1>{{video.title}}</h1>
+    <iframe src="https://www.youtube.com/embed/{{video.youtube_vid}}" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe><br>
+
+</div>
+{% endblock maincontent %}

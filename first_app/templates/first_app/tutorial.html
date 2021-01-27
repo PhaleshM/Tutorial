@@ -1,0 +1,31 @@
+
+{% extends "first_app/base.html" %}
+{% block headcontent %}
+<style>
+    .video-thumbs p a{
+        color: lightslategray;
+    }
+    h1{
+        font-size: 4vw;
+    }
+</style>
+{% endblock headcontent %}
+
+{% block maincontent %}
+<br>
+    <h1>This is home page of webapp</h1>
+    <div class="video-thumbs">
+        <h3>Video Links</h3>
+        <p>
+            <a href="{% url 'video-thumbs' 1 %}">HTML/CSS</a><br>
+            <a href="{% url 'video-thumbs' 2 %}">Javascript</a><br>
+            <a href="{% url 'video-thumbs' 3 %}">Python</a><br>
+            <a href="{% url 'video-thumbs' 4 %}">Django</a><br>
+            {% if request.user.is_superuser %}
+            <a href="{% url 'video-list' %}">Edit Video List</a><br>
+            {% endif %}
+
+        </p>
+    </div>
+{% endblock maincontent %}
+

@@ -1,0 +1,125 @@
+/*google font raleway*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,800;1,200;1,500;1,700&display=swap');
+/*
+font-family: 'Raleway', sans-serif;
+*/
+/*google font roboto slab*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;600&display=swap');
+/*
+font-family: 'Roboto Slab', serif;
+*/
+/*google font jetbrains mono*/
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
+/*
+font-family: 'JetBrains Mono', monospace;
+*/
+@keyframes fadein{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+
+}
+body{
+    font-size: 20px;
+    background: radial-gradient(#485563,#29323c) fixed;
+}
+main{
+    position:relative;
+    z-index:100;
+    margin: 68px 4rem 48px 4rem;
+    padding: 0 1rem;
+    background: radial-gradient(#485563,#29323c) fixed;
+}
+header, nav, footer{
+    position:fixed;
+    width:100%;
+    padding: 0 4%;
+}
+header{
+    z-index: 29000;
+
+    top:0;
+    left:0;
+    height: 60px;
+    line-height: 60px;
+    background-color: black;
+}
+header img{
+    margin-top: 10px;
+    float: left;
+    height: 70%;
+    position:relative;
+    top: -2px;
+    /* Have the logo image fade in */
+    animation: 1s ease-in 0s 1 fadein;
+}
+nav{
+    z-index: 30000;
+    position: fixed;
+    top:0;
+    right: 0;
+    height: 60px;
+    line-height: 60px;
+    text-align:right;
+}
+nav a{
+    z-index: 30010;
+    display:inline-block;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-left: 1.25em;
+    line-height: 100%;
+}
+nav a:link, nav a:visited{
+    text-decoration:none;
+}
+.btn{
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+nav a:hover, nav:a:active{
+    color: red;
+    text-decoration:none;
+}
+footer{
+    bottom: 0;
+    height: 30px;
+    line-height: 30px;
+    background-color:black;
+    text-align:center;
+    font-size: 1.4em;
+    z-index: 30001;
+}
+.div1{
+    margin-top: 70px;
+    font-size: 30px;
+}
+/* Flash messages in base.html */
+.flash {
+    text-align:center;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    border: solid 1px transparent;
+    border-radius: .25rem;
+}
+.success {
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+}
+.danger {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+}
+.container{
+    margin-left: 15px;
+}
+/*
+colors red=#D93B3B,pink=#F27D72,greyblue=#3B6D8C,barkgreyblue=#224459
+
+*/
